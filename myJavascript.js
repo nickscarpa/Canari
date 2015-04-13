@@ -641,7 +641,7 @@ if (E[i] == "Counter") {
 
 
 
-div.innerHTML = "<center><a href=\"edit.htm?myVar="+(i)+"\" onclick=\"editDevice("+i+");return false;\"><h3 id=Div"+i+">...</h3><h2 class=\"dataDisplay\"><span id=input"+i+">...</span>&nbsp;<span id=Units"+i+">...</span><h2 id=Value"+i+" style=\"font-size:18px\">...</h2></a><button type=\"button\" onclick=\"resetCounter("+i+")\" style=\"margin-left:0px;\">Reset</button></center></h2>";
+div.innerHTML = "<center><h3 id=Div"+i+">...</h3><h2 class=\"dataDisplay\"><span id=input"+i+">...</span>&nbsp;<span id=Units"+i+">...</span><h2 id=Value"+i+" style=\"font-size:18px\">...</h2><button type=\"button\" onclick=\"resetCounter("+i+")\" style=\"margin-left:0px; position:relative;z-index:5;\">Reset</button><a href=\"edit.htm?myVar="+(i)+"\" onclick=\"editDevice("+i+");return false;\"><span class=\"clickableDiv\"></span></a></center></h2>";
 
 } else {
   div.innerHTML = "<center><h3 id=Div"+i+">...</h3><h2 class=\"dataDisplay\"><span id=input"+i+">...</span>&nbsp;<span id=Units"+i+">...</span><h2 id=Value"+i+" style=\"font-size:18px\">...</h2><a href=\"edit.htm?myVar="+(i)+"\" onclick=\"editDevice("+i+");return false;\"><span class=\"clickableDiv\"></span></a></center></h2>";
@@ -946,7 +946,7 @@ function GetArduinoInputs() {
 function resetCounter(counterNumber) {
     console.log("resetCounter");
     var request4 = new XMLHttpRequest();
-    request4.open("POST", "Reset"+counterNumber, false);
+    request4.open("POST", "Reset"+counterNumber, true);
     request4.send();
 
 } //end function resetCounter
