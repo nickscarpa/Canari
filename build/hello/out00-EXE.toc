@@ -1,0 +1,9 @@
+('/Users/alanscarpa/Desktop/CanariSite/dist/hello',
+ True,
+ False,
+ None,
+ None,
+ [],
+ None,
+ False,
+ 1428893486)
