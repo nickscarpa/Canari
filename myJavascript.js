@@ -436,7 +436,7 @@ for (i=0; i <= A.length; i++) {
     if (request2.readyState == 4 && request2.status == 200) {
       setTimeout(function(){
       window.location = "/formSubmit";
-    }, 100); 
+    }, 2000); 
     }
   }
    try {
@@ -526,7 +526,7 @@ for (i=0; i <= ((A.length)-1); i++) {
     if (request2.readyState == 4 && request2.status == 200) {
         setTimeout(function(){
         window.location = "/formSubmit";
-    }, 100); 
+    }, 2000); 
     }
   }
    request2.send();
@@ -1426,7 +1426,7 @@ alert("Saved!");
     if (request4.readyState == 4 && request4.status == 200) {
         setTimeout(function(){
         window.location = "/formSubmit";
-    }, 100); 
+    }, 2000); 
     }
   } 
 
