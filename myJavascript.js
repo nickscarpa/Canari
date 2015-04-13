@@ -102,7 +102,7 @@ document.getElementById("contentDiv").style.display = 'none';
 document.getElementById("editDiv").style.display = 'inherit';
 
 
-document.getElementById('editDiv').innerHTML = "<h2 style=\"margin-left:35px;margin-bottom:35px;\">Edit Monitor</h2><form method=\"POST\" id=\"deviceFormB\" onsubmit=\"return writeTxt2('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P',"+DeviceInt+");\"><div id=\"formContent\" style=\"display:none\"><div id=\"leftContentB\"><p id=\"pA\">Radio ID:&nbsp;<input type=\"text\" name=\"radioID\" id=\"A\" maxlength=\"2\" onblur=\"return blockSpecialChar(this.value,this.id)\"></p><p id=\"pB\">IO Number:  <input type=\"text\" name=\"IOnumber\" id=\"B\" maxlength=\"1\" onblur=\"return blockSpecialChar(this.value,this.id)\"></p><p id=\"pC\">Type Code:  <input type=\"text\" name=\"typeCode\" id=\"C\" maxlength=\"1\" onblur=\"return blockSpecialChar(this.value,this.id)\"></p><p id=\"pD\">Zone Name:  <input type=\"text\" name=\"zoneName\" id=\"D\" maxlength=\"16\" onblur=\"return blockSpecialChar(this.value,this.id)\"></p><p id=\"pE\">Value Name:  <input type=\"text\" name=\"valueName\" id=\"E\" maxlength=\"8\" onblur=\"return blockSpecialChar(this.value,this.id)\"></p><p id=\"pF\">Units:  <select id=\"F\"><option value=\"\">Choose one...</option><option value=\"F\">Farenheit</option><option value=\"C\">Celsius</option></select></p><p id=\"pK\">4mA Scale Value:  <input type=\"text\" name=\"4mAScaleValue\" id=\"K\" maxlength=\"3\" onblur=\"return blockSpecialChar(this.value,this.id)\"></p><p id=\"pL\">20mA Scale Value:  <input type=\"text\" name=\"20mAScaleValue\" id=\"L\" maxlength=\"3\" onblur=\"return blockSpecialChar(this.value,this.id)\"></p><p id=\"pM\">Counter Scale:  <input type=\"text\" name=\"counterScale\" id=\"M\" maxlength=\"3\" onblur=\"return blockSpecialChar(this.value,this.id)\"></p><p id=\"pN\">ON Text:  <input type=\"text\" name=\"onText\" id=\"N\" maxlength=\"8\" onblur=\"return blockSpecialChar(this.value,this.id)\"></p><p id=\"pO\">OFF Text:  <input type=\"text\" name=\"offText\" id=\"O\" maxlength=\"8\" onblur=\"return blockSpecialChar(this.value,this.id)\"></p><p id=\"pP\">Set Alarm:<select name=\"onColorCode\" id=\"P\"><option value=\"\">Choose one...</option><option value=\"0\">OFF state</option><option value=\"1\">ON state</option></select></p></div><div id=\"rightContentB\"><p id=\"pG\" style=\"background-color:#E12218;color:white\">High Critical Level:  <input type=\"text\" name=\"highHighSetPoint\" id=\"G\" maxlength=\"3\" onblur=\"return blockSpecialChar(this.value,this.id)\"></p><p id=\"pH\" style=\"background-color: rgb(254, 251, 91)\">High Warning Level:  <input type=\"text\" name=\"highSetPoint\" id=\"H\" maxlength=\"3\" onblur=\"return blockSpecialChar(this.value,this.id)\"></p><p id=\"pI\" style=\"background-color: rgb(254, 251, 91)\">Low Warning Level:  <input type=\"text\" name=\"lowSetPoint\" id=\"I\" maxlength=\"3\" onblur=\"return blockSpecialChar(this.value,this.id)\"></p><p id=\"pJ\" style=\"background-color:#E12218;color:white\">Low Critical Level:  <input type=\"text\" name=\"lowLowSetPoint\" id=\"J\" maxlength=\"3\" onblur=\"return blockSpecialChar(this.value,this.id)\"></p><img src=\"bar.png\" style=\"display:none;margin: 0 auto;margin-top:25px;display:block;width:100%;height:auto;max-width:300px\" id=\"barar\"></div><div style=\"margin-top:25px\"><a href=\"/\" id=\"cancelBtnB\" onclick=\"hideEditDiv(); return false;\">Cancel</a><button class=\"editBtn\" type=\"button\" onclick=\"deleteDevice("+DeviceInt+")\">DELETE</button><input type=\"submit\" value=\"Save\" id=\"saveBtnB\"></div></div></form>";
+document.getElementById('editDiv').innerHTML = "<h2 style=\"margin-left:35px;margin-bottom:35px;\">Edit Monitor</h2><form method=\"POST\" id=\"deviceFormB\" onsubmit=\"writeTxt2('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P',"+DeviceInt+"); return false;\"><div id=\"formContent\" style=\"display:none\"><div id=\"leftContentB\"><p id=\"pA\">Radio ID:&nbsp;<input type=\"text\" name=\"radioID\" id=\"A\" maxlength=\"2\" onblur=\"return blockSpecialChar(this.value,this.id)\"></p><p id=\"pB\">IO Number:  <input type=\"text\" name=\"IOnumber\" id=\"B\" maxlength=\"1\" onblur=\"return blockSpecialChar(this.value,this.id)\"></p><p id=\"pC\">Type Code:  <input type=\"text\" name=\"typeCode\" id=\"C\" maxlength=\"1\" onblur=\"return blockSpecialChar(this.value,this.id)\"></p><p id=\"pD\">Zone Name:  <input type=\"text\" name=\"zoneName\" id=\"D\" maxlength=\"16\" onblur=\"return blockSpecialChar(this.value,this.id)\"></p><p id=\"pE\">Value Name:  <input type=\"text\" name=\"valueName\" id=\"E\" maxlength=\"8\" onblur=\"return blockSpecialChar(this.value,this.id)\"></p><p id=\"pF\">Units:  <select id=\"F\"><option value=\"\">Choose one...</option><option value=\"F\">Farenheit</option><option value=\"C\">Celsius</option></select></p><p id=\"pK\">4mA Scale Value:  <input type=\"text\" name=\"4mAScaleValue\" id=\"K\" maxlength=\"3\" onblur=\"return blockSpecialChar(this.value,this.id)\"></p><p id=\"pL\">20mA Scale Value:  <input type=\"text\" name=\"20mAScaleValue\" id=\"L\" maxlength=\"3\" onblur=\"return blockSpecialChar(this.value,this.id)\"></p><p id=\"pM\">Counter Scale:  <input type=\"text\" name=\"counterScale\" id=\"M\" maxlength=\"3\" onblur=\"return blockSpecialChar(this.value,this.id)\"></p><p id=\"pN\">ON Text:  <input type=\"text\" name=\"onText\" id=\"N\" maxlength=\"8\" onblur=\"return blockSpecialChar(this.value,this.id)\"></p><p id=\"pO\">OFF Text:  <input type=\"text\" name=\"offText\" id=\"O\" maxlength=\"8\" onblur=\"return blockSpecialChar(this.value,this.id)\"></p><p id=\"pP\">Set Alarm:<select name=\"onColorCode\" id=\"P\"><option value=\"\">Choose one...</option><option value=\"0\">OFF state</option><option value=\"1\">ON state</option></select></p></div><div id=\"rightContentB\"><p id=\"pG\" style=\"background-color:#E12218;color:white\">High Critical Level:  <input type=\"text\" name=\"highHighSetPoint\" id=\"G\" maxlength=\"3\" onblur=\"return blockSpecialChar(this.value,this.id)\"></p><p id=\"pH\" style=\"background-color: rgb(254, 251, 91)\">High Warning Level:  <input type=\"text\" name=\"highSetPoint\" id=\"H\" maxlength=\"3\" onblur=\"return blockSpecialChar(this.value,this.id)\"></p><p id=\"pI\" style=\"background-color: rgb(254, 251, 91)\">Low Warning Level:  <input type=\"text\" name=\"lowSetPoint\" id=\"I\" maxlength=\"3\" onblur=\"return blockSpecialChar(this.value,this.id)\"></p><p id=\"pJ\" style=\"background-color:#E12218;color:white\">Low Critical Level:  <input type=\"text\" name=\"lowLowSetPoint\" id=\"J\" maxlength=\"3\" onblur=\"return blockSpecialChar(this.value,this.id)\"></p><img src=\"bar.png\" style=\"display:none;margin: 0 auto;margin-top:25px;display:block;width:100%;height:auto;max-width:300px\" id=\"barar\"></div><div style=\"margin-top:25px\"><a href=\"/\" id=\"cancelBtnB\" onclick=\"hideEditDiv(); return false;\">Cancel</a><button class=\"editBtn\" type=\"button\" onclick=\"deleteDevice("+DeviceInt+")\">DELETE</button><input type=\"submit\" value=\"Save\" id=\"saveBtnB\"></div></div></form>";
 
 
 
@@ -414,7 +414,7 @@ if(M[DeviceInt] == "0") {
 
 for (i=0; i <= A.length; i++) {
     if (i==0) {
-      formVariables="data = '["+jsonStrings[i];
+      formVariables="data = ?'["+jsonStrings[i];
       } else if (i < A.length) {
          formVariables=formVariables.concat(","+jsonStrings[i]);
      } else {
@@ -432,6 +432,13 @@ for (i=0; i <= A.length; i++) {
   nocache = "&nocache=" + Math.random() * 1000000;
    var request2 = new XMLHttpRequest();
    request2.open("POST", formVariables, false); 
+   request2.onreadystatechange = function () {
+    if (request2.readyState == 4 && request2.status == 200) {
+      setTimeout(function(){
+      window.location = "/formSubmit";
+    }, 100); 
+    }
+  }
    try {
    request2.send();
   } 
@@ -440,9 +447,9 @@ for (i=0; i <= A.length; i++) {
     alert("Error editing device.  Try again.");
    }
 
-   setTimeout(function(){
-        window.location = "/";
-    }, 0);
+   // setTimeout(function(){
+   //      window.location = "/formSubmit";
+   //  }, 1000);
 
   
 }
@@ -494,7 +501,7 @@ if (((A.length)-1) > 0) {
 
 for (i=0; i <= ((A.length)-1); i++) {
     if (i==0) {
-      formVariables="data = '["+jsonStrings[i];
+      formVariables="data = ?'["+jsonStrings[i];
       } else if (i < ((A.length)-1)) {
          formVariables=formVariables.concat(","+jsonStrings[i]);
      } else {
@@ -503,7 +510,7 @@ for (i=0; i <= ((A.length)-1); i++) {
    }
  }
 } else {
-  formVariables="data = '[{}]';";
+  formVariables="data = ?'[{}]';";
 }
 
  alert("DELETED!");
@@ -513,18 +520,22 @@ for (i=0; i <= ((A.length)-1); i++) {
 
   nocache = "&nocache=" + Math.random() * 1000000;
    var request2 = new XMLHttpRequest();
-   request2.open("POST", formVariables, false); 
-    try {
+   request2.open("POST", formVariables, true); 
+   
+   request2.onreadystatechange = function () {
+    if (request2.readyState == 4 && request2.status == 200) {
+        setTimeout(function(){
+        window.location = "/formSubmit";
+    }, 100); 
+    }
+  }
    request2.send();
-  } 
-   catch(err){
-    console.error("Error sending form variables");
-    alert("Error deleting device.  Try again.");
-   }
 
-   setTimeout(function(){
-        window.location = "/";
-    }, 0);
+    //  setTimeout(function(){
+    //     window.location = "/formSubmit";
+    // }, 100);
+  
+ 
 
 
 } else {
@@ -682,6 +693,9 @@ document.getElementById('contentDiv').appendChild(div);
 //Set GET request for data to Arduino 
 function loadJson(i,callback) {
     console.log("Loading json");
+    if (count == 0){
+      loadContent();
+    } else {
     //Setup Javascript arrays from Arduino data
     A[i] = mydata[i].A;
     B[i] = mydata[i].B;
@@ -775,10 +789,11 @@ function loadJson(i,callback) {
 console.log("Count is "+count);
 console.log("i is "+i);
 
+
     if (i == (count-1)){
       loadContent();
     }
-
+ }
 } //end function loadJson
 
 //************runAjaxAgain****************************
@@ -1406,7 +1421,14 @@ alert("Saved!");
 
    nocache = "&nocache=" + Math.random() * 1000000;
    var request4 = new XMLHttpRequest();
-   request4.open("POST", formVariables, false); 
+   request4.open("POST", formVariables, false);
+   request4.onreadystatechange = function () {
+    if (request4.readyState == 4 && request4.status == 200) {
+        setTimeout(function(){
+        window.location = "/formSubmit";
+    }, 100); 
+    }
+  } 
 
    try {
    request4.send();

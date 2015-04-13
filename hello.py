@@ -79,6 +79,12 @@ def formSubmit():
     redirect("/hello", 303)
     return
 
+@route('/formSubmit', method='GET')
+def formSubmit():
+    print "TAKE ME HOMEEEE!"
+    redirect("/hello", 303)
+    return
+
 
 @route('/hello')
 @route('/hello', method='GET')
@@ -144,7 +150,7 @@ def hello():
 
 <div id="addDiv" style="text-align:center;display:none;">
 <h2>Add New Device</h2>
-<form method="POST" id="deviceForm" action="/formSubmit" onsubmit="writeTxt('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P');">
+<form method="POST" id="deviceForm" onsubmit="writeTxt('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P'); return false;">
 
 
 <p style="background-color:#f5f5f5;" id="deviceDropdown">Monitor Type:<select name="" id="deviceList" onchange="loadContentA(this.value)">

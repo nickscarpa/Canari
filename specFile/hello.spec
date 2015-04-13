@@ -7,7 +7,9 @@ a = Analysis(['hello.py'],
 pyz = PYZ(a.pure)
 exe = EXE(pyz,
           a.scripts,
-          a.binaries,
+          a.binaries + [('msvcp100.dll', 'C:\\Windows\\System32\\msvcp100.dll', 'BINARY'),
+                        ('msvcr100.dll', 'C:\\Windows\\System32\\msvcr100.dll', 'BINARY')]
+          if sys.platform == 'win32' else a.binaries,
           a.zipfiles,
           a.datas + [('cLogo.png', '/Users/alanscarpa/Desktop/CanariSite/cLogo.png', 'DATA'),
            ('style.css', '/Users/alanscarpa/Desktop/CanariSite/style.css', 'DATA'),
