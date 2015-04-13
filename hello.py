@@ -76,14 +76,55 @@ def send_static(filename):
 
 @route('/formSubmit', method='POST')
 def formSubmit():
-    redirect("/hello", 303)
-    return
+    return ''' 
+    <!DOCTYPE html>
+
+<html>
+    <head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ -->
+<meta http-equiv="refresh" content="1;url=/hello">
+<script type="text/javascript">
+            window.location.href = "/hello"
+        </script>
+
+        <title>CANARI JR. | Home</title>
+  
+ </head>
+
+
+<body></body></html>
+    '''
 
 @route('/formSubmit', method='GET')
 def formSubmit():
     print "TAKE ME HOMEEEE!"
-    redirect("/hello", 303)
-    return
+    return ''' 
+    <!DOCTYPE html>
+
+<html>
+    <head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ -->
+<meta http-equiv="refresh" content="1;url=/hello">
+<script type="text/javascript">
+            window.location.href = "/hello"
+        </script>
+
+        <title>CANARI JR. | Home</title>
+  
+ </head>
+
+
+<body></body></html>
+    '''
+    
 
 
 @route('/hello')
