@@ -124,9 +124,9 @@ def hello():
 
 <html>
     <head>
-<meta http-equiv="Cache-control" content="no-cache">
+<meta http-equiv="Cache-control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Expires" content="0" />
 <meta http-equiv="Pragma" content="no-cache">
-<META HTTP-EQUIV="Expires" CONTENT="-1">
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -230,9 +230,10 @@ def hello():
 </div>
 </body>
 <HEAD>
+<meta http-equiv="Cache-control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Expires" content="0" />
 <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
-<META HTTP-EQUIV="Expires" CONTENT="-1">
-<meta http-equiv="Cache-control" content="no-cache">
+
 
 </HEAD>
 </html>
