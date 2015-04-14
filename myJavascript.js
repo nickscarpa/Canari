@@ -304,7 +304,6 @@ P[DeviceInt] = document.getElementById(sixteen).value;
 // alert(Name[1]);
 // alert(Loc[1]);
 
-document.getElementById("editDiv").innerHTML = "<h1 style=\"color:#000000\">Saving.  Please wait.</h1>";
 
 
 if (E[DeviceInt] == "Temp"||E[DeviceInt] == "Humidity"||E[DeviceInt] == "Analog") {
@@ -404,6 +403,7 @@ if(M[DeviceInt] == "0") {
 }
 
 
+document.getElementById("editDiv").innerHTML = "<h1 style=\"color:#000000\">Saving.  Please wait.</h1>";
 
 
  var jsonStrings = [];
@@ -563,6 +563,11 @@ for (i=0; i <= ((A.length)-1); i++) {
 
 function showAdd(){
 
+
+
+
+
+
 clearInterval(pollRunning);
 
 if (saveBtnShowing == true){
@@ -578,9 +583,12 @@ if (saveBtnShowing == true){
 
 }
 
+
+
 //************preparePage****************************
 function preparePage() {
     console.log("Prepare Page");
+
     mydata = JSON.parse(data);
     count = 0;
     if (mydata[0].A != undefined) {
@@ -1303,7 +1311,6 @@ P[newDeviceInt] = document.getElementById(sixteen).value;
 
 
 
-document.getElementById("addDiv").innerHTML = "<h1 style=\"color:#000000\">Saving.  Please wait.</h1>";
 
 
 
@@ -1394,6 +1401,7 @@ if(M[newDeviceInt] == "0") {
 } 
 
  
+document.getElementById("addDiv").innerHTML = "<h1 style=\"color:#000000\">Saving.  Please wait.</h1>";
 
 
 var jsonStrings = [];

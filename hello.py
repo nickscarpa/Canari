@@ -21,6 +21,8 @@ def resource_path(relative_path):
 def Count(deviceNumber):
     return
 
+
+
 @get('/Valu<deviceValue>') # or @route('/login') // Cut off "e" of value intentionally
 def Value(deviceValue):
     theGetRequest = request.query_string
@@ -79,6 +81,7 @@ def send_image(filename):
 
 @get('/<filename:path>')
 def send_static(filename):
+    response.set_header('Cache-control', 'no-cache, must-revalidate')
     return static_file(filename, root=resource_path('./'))
 
 
@@ -133,9 +136,10 @@ def hello():
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
  -->
-
-
-      <script type="text/javascript" src="data.txt"></script>
+      <script type="text/javascript"> 
+  var url = 'data.txt?'+Math.random()
+  document.write('<script type="text/javascript" src="'+url+'"></scr'+'ipt>')  
+  </script>
       <script type="text/javascript" src="myJavascript.js"></script>
       <link rel="stylesheet" type="text/css" href="style.css"></script>
 
