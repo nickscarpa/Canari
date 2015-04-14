@@ -3,6 +3,24 @@ import os
 import string
 import sys
 import urllib2, httplib
+import serial
+import minimalmodbus
+
+
+
+serialPort = serial.Serial()
+serialPort.port = 3
+print serialPort.name
+print serialPort.isOpen()
+
+instrument = minimalmodbus.Instrument('COM4', 11) # port name, slave address (in decimal)
+instrument.serial.timeout  = 0.5
+
+print instrument
+digital = instrument.read_register(2, 0) # Registernumber, number of decimals
+print digital
+
+instrument.write_register(6370, 0, 0) # Registernumber, value, number of decimals for storage
 
 
 def resource_path(relative_path):
