@@ -425,7 +425,7 @@ for (i=0; i <= A.length; i++) {
 
 
 
-  alert("Saved!");
+ // alert("Saved!");
 
 
 
@@ -433,10 +433,10 @@ for (i=0; i <= A.length; i++) {
    var request2 = new XMLHttpRequest();
    request2.open("POST", formVariables, false); 
    request2.onreadystatechange = function () {
-    if (request2.readyState == 4 && request2.status == 200) {
+    if (request2.status == 303) {
       setTimeout(function(){
       window.location = "/formSubmit";
-    }, 2000); 
+    }, 1000); 
     }
   }
    try {
@@ -488,7 +488,8 @@ nn = n+1;
 
   }
 
-  
+  document.getElementById("editDiv").innerHTML = "<h1 style=\"color:#000000\">Saving.  Please wait.</h1>";
+
 
   var jsonStrings = [];
 
@@ -513,7 +514,7 @@ for (i=0; i <= ((A.length)-1); i++) {
   formVariables="data = ?'[{}]';";
 }
 
- alert("DELETED!");
+ // alert("DELETED!");
 
 //alert(formVariables);
 
@@ -523,10 +524,10 @@ for (i=0; i <= ((A.length)-1); i++) {
    request2.open("POST", formVariables, true); 
    
    request2.onreadystatechange = function () {
-    if (request2.readyState == 4 && request2.status == 200) {
+    if (request2.status == 303) {
         setTimeout(function(){
         window.location = "/formSubmit";
-    }, 2000); 
+    }, 1000); 
     }
   }
    request2.send();
@@ -1415,7 +1416,7 @@ for (i=0; i <= A.length; i++) {
  }
 
 
-alert("Saved!");
+//alert("Saved!");
 
 //alert(formVariables);
 
@@ -1423,10 +1424,10 @@ alert("Saved!");
    var request4 = new XMLHttpRequest();
    request4.open("POST", formVariables, false);
    request4.onreadystatechange = function () {
-    if (request4.readyState == 4 && request4.status == 200) {
+    if (request4.status == 303) {
         setTimeout(function(){
         window.location = "/formSubmit";
-    }, 2000); 
+    }, 1000); 
     }
   } 
 

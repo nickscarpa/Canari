@@ -1,7 +1,8 @@
-from bottle import route, run, static_file, get, post, request, response, redirect
+from bottle import route, run, static_file, get, post, request, response, redirect, HTTPResponse
 import os
 import string
 import sys
+import urllib2, httplib
 
 
 def resource_path(relative_path):
@@ -15,6 +16,7 @@ def resource_path(relative_path):
     return os.path.join(base_path, relative_path)
 
 
+
 @get('/Count<deviceNumber>') # or @route('/login')
 def Count(deviceNumber):
     return
@@ -26,13 +28,13 @@ def Value(deviceValue):
     return
 
 
-def fix_ownership(path):
-    """Change the owner of the file to SUDO_UID"""
+# def fix_ownership(path):
+#     """Change the owner of the file to SUDO_UID"""
 
-    uid = os.environ.get('SUDO_UID')
-    gid = os.environ.get('SUDO_GID')
-    if uid is not None:
-        os.chown(resource_path(path), int(uid), int(gid))
+#     uid = os.environ.get('SUDO_UID')
+#     gid = os.environ.get('SUDO_GID')
+#     if uid is not None:
+#         os.chown(resource_path(path), int(uid), int(gid))
 
 
 
@@ -52,8 +54,17 @@ def data(dataValue):
 
     with open(theDataFile,"w") as fo:
       fo.write('data = '+newPostRequest)
+      fo.close()
 
-    return
+    print "FINISHED WRITING TO DATA FILE"
+
+   # redirect('/formSubmit', 303)
+
+    # urllib2.urlopen('http://./formSubmit')
+    # response.status = 303
+    return HTTPResponse(status=303)
+
+   
     
 
 
@@ -70,38 +81,12 @@ def send_image(filename):
 def send_static(filename):
     return static_file(filename, root=resource_path('./'))
 
-     #   return static_file(filename, root=os.path.join(sys._MEIPASS, './'))
-
-
 
 @route('/formSubmit', method='POST')
-def formSubmit():
-    return ''' 
-    <!DOCTYPE html>
-
-<html>
-    <head>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
- -->
-<meta http-equiv="refresh" content="1;url=/hello">
-<script type="text/javascript">
-            window.location.href = "/hello"
-        </script>
-
-        <title>CANARI JR. | Home</title>
-  
- </head>
-
-
-<body></body></html>
-    '''
-
 @route('/formSubmit', method='GET')
 def formSubmit():
-    print "TAKE ME HOMEEEE!"
+  # <meta http-equiv="refresh" content="1;url=/hello">
+    print "INSIDE FORM SUBMIT"
     return ''' 
     <!DOCTYPE html>
 
@@ -112,18 +97,21 @@ def formSubmit():
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
  -->
-<meta http-equiv="refresh" content="1;url=/hello">
 <script type="text/javascript">
-            window.location.href = "/hello"
+function goHome() {
+              window.location.assign("/hello");
+}
         </script>
 
-        <title>CANARI JR. | Home</title>
+        <title>CANARI JR. | Saving</title>
   
  </head>
 
 
-<body></body></html>
+<body onload="goHome()"></body></html>
     '''
+
+
     
 
 
@@ -136,6 +124,10 @@ def hello():
 
 <html>
     <head>
+<meta http-equiv="Cache-control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -237,6 +229,12 @@ def hello():
 
 </div>
 </body>
+<HEAD>
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<meta http-equiv="Cache-control" content="no-cache">
+
+</HEAD>
 </html>
 
 
